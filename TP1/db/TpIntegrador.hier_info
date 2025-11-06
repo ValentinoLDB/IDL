@@ -1,0 +1,1241 @@
+|MAIN
+ERROR <= CONTADOR_UPDOWN:inst.ERROR
+b2 => CONTADOR_UPDOWN:inst.b2
+b1 => CONTADOR_UPDOWN:inst.b1
+b0 => CONTADOR_UPDOWN:inst.b0
+RECARGAR => CONTADOR_UPDOWN:inst.RECARGAR
+START => CONTADOR_UPDOWN:inst.START
+CLK => CONTADOR_UPDOWN:inst.CLK
+LOAD_F => CONTADOR_UPDOWN:inst.LOAD_F
+LOAD_I => CONTADOR_UPDOWN:inst.LOAD_I
+CONTINUAR => CONTADOR_UPDOWN:inst.CONTINUAR
+UPDOWN => CONTADOR_UPDOWN:inst.UP_DOWN
+DATA[0] <> CONTADOR_UPDOWN:inst.DATA[0]
+DATA[1] <> CONTADOR_UPDOWN:inst.DATA[1]
+DATA[2] <> CONTADOR_UPDOWN:inst.DATA[2]
+DATA[3] <> CONTADOR_UPDOWN:inst.DATA[3]
+DATA[4] <> CONTADOR_UPDOWN:inst.DATA[4]
+DATA[5] <> CONTADOR_UPDOWN:inst.DATA[5]
+DATA[6] <> CONTADOR_UPDOWN:inst.DATA[6]
+DATA[7] <> CONTADOR_UPDOWN:inst.DATA[7]
+DATA[8] <> CONTADOR_UPDOWN:inst.DATA[8]
+DATA[9] <> CONTADOR_UPDOWN:inst.DATA[9]
+DATA[10] <> CONTADOR_UPDOWN:inst.DATA[10]
+DATA[11] <> CONTADOR_UPDOWN:inst.DATA[11]
+FIN <= CONTADOR_UPDOWN:inst.FIN
+PAUSA <= CONTADOR_UPDOWN:inst.PAUSA
+
+
+|MAIN|CONTADOR_UPDOWN:inst
+PAUSA <= instsxs.DB_MAX_OUTPUT_PORT_TYPE
+b2 => instsxs.IN0
+b2 => Sum_Res:inst.B[2]
+b1 => instsxs.IN1
+b1 => Sum_Res:inst.B[1]
+b0 => instsxs.IN2
+b0 => Sum_Res:inst.B[0]
+ERROR <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+UP_DOWN => validacionInicioFin:inst2.UPDOWN
+UP_DOWN => Sum_Res:inst.Up_Down
+UP_DOWN => inst10.IN1
+UP_DOWN => ComparadorFIN:inst5.UPDOWN
+UP_DOWN => inst16.IN1
+CLK => Registro:VALOR_FINAL.CLK
+CLK => Registro:CONT.CLK
+CLK => inst17.CLK
+CLK => inst14.CLK
+CLK => Registro:VALOR_INICIAL.CLK
+LOAD_F => Registro:VALOR_FINAL.EN
+RECARGAR => Entrada_Salida:inasd.EnableIN
+RECARGAR => inst20.IN0
+RECARGAR => inst42.IN0
+START => Entrada_Salida:inasd.EnableOUT
+START => inst4.IN0
+START => inst17.DATAIN
+START => inst26.IN1
+START => inst22.IN1
+DATA[0] <> Entrada_Salida:inasd.DATA[0]
+DATA[1] <> Entrada_Salida:inasd.DATA[1]
+DATA[2] <> Entrada_Salida:inasd.DATA[2]
+DATA[3] <> Entrada_Salida:inasd.DATA[3]
+DATA[4] <> Entrada_Salida:inasd.DATA[4]
+DATA[5] <> Entrada_Salida:inasd.DATA[5]
+DATA[6] <> Entrada_Salida:inasd.DATA[6]
+DATA[7] <> Entrada_Salida:inasd.DATA[7]
+DATA[8] <> Entrada_Salida:inasd.DATA[8]
+DATA[9] <> Entrada_Salida:inasd.DATA[9]
+DATA[10] <> Entrada_Salida:inasd.DATA[10]
+DATA[11] <> Entrada_Salida:inasd.DATA[11]
+FIN <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+CONTINUAR => inst11.IN1
+CONTINUAR => inst8.IN0
+LOAD_I => Registro:VALOR_INICIAL.EN
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2
+error <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+UPDOWN => inst4.IN0
+UPDOWN => inst5.IN0
+v_final[0] => comparador12bits:inst.v_final[0]
+v_final[1] => comparador12bits:inst.v_final[1]
+v_final[2] => comparador12bits:inst.v_final[2]
+v_final[3] => comparador12bits:inst.v_final[3]
+v_final[4] => comparador12bits:inst.v_final[4]
+v_final[5] => comparador12bits:inst.v_final[5]
+v_final[6] => comparador12bits:inst.v_final[6]
+v_final[7] => comparador12bits:inst.v_final[7]
+v_final[8] => comparador12bits:inst.v_final[8]
+v_final[9] => comparador12bits:inst.v_final[9]
+v_final[10] => comparador12bits:inst.v_final[10]
+v_final[11] => comparador12bits:inst.v_final[11]
+v_inicial[0] => comparador12bits:inst.v_inicial[0]
+v_inicial[1] => comparador12bits:inst.v_inicial[1]
+v_inicial[2] => comparador12bits:inst.v_inicial[2]
+v_inicial[3] => comparador12bits:inst.v_inicial[3]
+v_inicial[4] => comparador12bits:inst.v_inicial[4]
+v_inicial[5] => comparador12bits:inst.v_inicial[5]
+v_inicial[6] => comparador12bits:inst.v_inicial[6]
+v_inicial[7] => comparador12bits:inst.v_inicial[7]
+v_inicial[8] => comparador12bits:inst.v_inicial[8]
+v_inicial[9] => comparador12bits:inst.v_inicial[9]
+v_inicial[10] => comparador12bits:inst.v_inicial[10]
+v_inicial[11] => comparador12bits:inst.v_inicial[11]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst
+G <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+v_inicial[0] => comparador1bit:inst.A
+v_inicial[1] => comparador1bit:inst2.A
+v_inicial[2] => comparador1bit:inst3.A
+v_inicial[3] => comparador1bit:inst4.A
+v_inicial[4] => comparador1bit:inst5.A
+v_inicial[5] => comparador1bit:inst6.A
+v_inicial[6] => comparador1bit:inst7.A
+v_inicial[7] => comparador1bit:inst8.A
+v_inicial[8] => comparador1bit:inst9.A
+v_inicial[9] => comparador1bit:inst10.A
+v_inicial[10] => comparador1bit:inst11.A
+v_inicial[11] => comparador1bit:inst12.A
+v_final[0] => comparador1bit:inst.B
+v_final[1] => comparador1bit:inst2.B
+v_final[2] => comparador1bit:inst3.B
+v_final[3] => comparador1bit:inst4.B
+v_final[4] => comparador1bit:inst5.B
+v_final[5] => comparador1bit:inst6.B
+v_final[6] => comparador1bit:inst7.B
+v_final[7] => comparador1bit:inst8.B
+v_final[8] => comparador1bit:inst9.B
+v_final[9] => comparador1bit:inst10.B
+v_final[10] => comparador1bit:inst11.B
+v_final[11] => comparador1bit:inst12.B
+L <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+E <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst12
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst11
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst10
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst9
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst8
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst7
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst6
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst5
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst4
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst3
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst2
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|validacionInicioFin:inst2|comparador12bits:inst|comparador1bit:inst
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Registro:VALOR_FINAL
+BUF[0] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+BUF[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+BUF[2] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+BUF[3] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+BUF[4] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+BUF[5] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+BUF[6] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+BUF[7] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+BUF[8] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+BUF[9] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+BUF[10] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+BUF[11] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+DAT[0] => inst20.DATAIN
+DAT[1] => inst.DATAIN
+DAT[2] => inst5.DATAIN
+DAT[3] => inst6.DATAIN
+DAT[4] => inst7.DATAIN
+DAT[5] => inst8.DATAIN
+DAT[6] => inst9.DATAIN
+DAT[7] => inst10.DATAIN
+DAT[8] => inst11.DATAIN
+DAT[9] => inst12.DATAIN
+DAT[10] => inst13.DATAIN
+DAT[11] => inst19.DATAIN
+CLK => inst20.CLK
+CLK => inst.CLK
+CLK => inst5.CLK
+CLK => inst6.CLK
+CLK => inst7.CLK
+CLK => inst8.CLK
+CLK => inst9.CLK
+CLK => inst10.CLK
+CLK => inst11.CLK
+CLK => inst12.CLK
+CLK => inst13.CLK
+CLK => inst19.CLK
+EN => inst20.ENA
+EN => inst.ENA
+EN => inst5.ENA
+EN => inst6.ENA
+EN => inst7.ENA
+EN => inst8.ENA
+EN => inst9.ENA
+EN => inst10.ENA
+EN => inst11.ENA
+EN => inst12.ENA
+EN => inst13.ENA
+EN => inst19.ENA
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Entrada_Salida:inasd
+DATA[0] <> inst21[0]
+DATA[1] <> inst21[1]
+DATA[2] <> inst21[2]
+DATA[3] <> inst21[3]
+DATA[4] <> inst21[4]
+DATA[5] <> inst21[5]
+DATA[6] <> inst21[6]
+DATA[7] <> inst21[7]
+DATA[8] <> inst21[8]
+DATA[9] <> inst21[9]
+DATA[10] <> inst21[10]
+DATA[11] <> inst21[11]
+DATA_OUT[0] => inst21[0].DATAIN
+DATA_OUT[1] => inst21[1].DATAIN
+DATA_OUT[2] => inst21[2].DATAIN
+DATA_OUT[3] => inst21[3].DATAIN
+DATA_OUT[4] => inst21[4].DATAIN
+DATA_OUT[5] => inst21[5].DATAIN
+DATA_OUT[6] => inst21[6].DATAIN
+DATA_OUT[7] => inst21[7].DATAIN
+DATA_OUT[8] => inst21[8].DATAIN
+DATA_OUT[9] => inst21[9].DATAIN
+DATA_OUT[10] => inst21[10].DATAIN
+DATA_OUT[11] => inst21[11].DATAIN
+EnableOUT => inst21[11].OE
+EnableOUT => inst21[10].OE
+EnableOUT => inst21[9].OE
+EnableOUT => inst21[8].OE
+EnableOUT => inst21[7].OE
+EnableOUT => inst21[6].OE
+EnableOUT => inst21[5].OE
+EnableOUT => inst21[4].OE
+EnableOUT => inst21[3].OE
+EnableOUT => inst21[2].OE
+EnableOUT => inst21[1].OE
+EnableOUT => inst21[0].OE
+DATA_IN[0] <= inst24[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[1] <= inst24[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[2] <= inst24[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[3] <= inst24[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[4] <= inst24[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[5] <= inst24[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[6] <= inst24[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[7] <= inst24[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[8] <= inst24[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[9] <= inst24[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[10] <= inst24[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA_IN[11] <= inst24[11].DB_MAX_OUTPUT_PORT_TYPE
+EnableIN => inst24[11].OE
+EnableIN => inst24[10].OE
+EnableIN => inst24[9].OE
+EnableIN => inst24[8].OE
+EnableIN => inst24[7].OE
+EnableIN => inst24[6].OE
+EnableIN => inst24[5].OE
+EnableIN => inst24[4].OE
+EnableIN => inst24[3].OE
+EnableIN => inst24[2].OE
+EnableIN => inst24[1].OE
+EnableIN => inst24[0].OE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Registro:CONT
+BUF[0] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+BUF[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+BUF[2] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+BUF[3] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+BUF[4] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+BUF[5] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+BUF[6] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+BUF[7] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+BUF[8] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+BUF[9] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+BUF[10] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+BUF[11] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+DAT[0] => inst20.DATAIN
+DAT[1] => inst.DATAIN
+DAT[2] => inst5.DATAIN
+DAT[3] => inst6.DATAIN
+DAT[4] => inst7.DATAIN
+DAT[5] => inst8.DATAIN
+DAT[6] => inst9.DATAIN
+DAT[7] => inst10.DATAIN
+DAT[8] => inst11.DATAIN
+DAT[9] => inst12.DATAIN
+DAT[10] => inst13.DATAIN
+DAT[11] => inst19.DATAIN
+CLK => inst20.CLK
+CLK => inst.CLK
+CLK => inst5.CLK
+CLK => inst6.CLK
+CLK => inst7.CLK
+CLK => inst8.CLK
+CLK => inst9.CLK
+CLK => inst10.CLK
+CLK => inst11.CLK
+CLK => inst12.CLK
+CLK => inst13.CLK
+CLK => inst19.CLK
+EN => inst20.ENA
+EN => inst.ENA
+EN => inst5.ENA
+EN => inst6.ENA
+EN => inst7.ENA
+EN => inst8.ENA
+EN => inst9.ENA
+EN => inst10.ENA
+EN => inst11.ENA
+EN => inst12.ENA
+EN => inst13.ENA
+EN => inst19.ENA
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst
+Co <= Sum12bits:inst.Co
+Up_Down => Sum12bits:inst.Ci
+Up_Down => inst1[11].IN1
+Up_Down => inst1[10].IN1
+Up_Down => inst1[9].IN1
+Up_Down => inst1[8].IN1
+Up_Down => inst1[7].IN1
+Up_Down => inst1[6].IN1
+Up_Down => inst1[5].IN1
+Up_Down => inst1[4].IN1
+Up_Down => inst1[3].IN1
+Up_Down => inst1[2].IN1
+Up_Down => inst1[1].IN1
+Up_Down => inst1[0].IN1
+A[0] => Sum12bits:inst.A[0]
+A[1] => Sum12bits:inst.A[1]
+A[2] => Sum12bits:inst.A[2]
+A[3] => Sum12bits:inst.A[3]
+A[4] => Sum12bits:inst.A[4]
+A[5] => Sum12bits:inst.A[5]
+A[6] => Sum12bits:inst.A[6]
+A[7] => Sum12bits:inst.A[7]
+A[8] => Sum12bits:inst.A[8]
+A[9] => Sum12bits:inst.A[9]
+A[10] => Sum12bits:inst.A[10]
+A[11] => Sum12bits:inst.A[11]
+B[0] => inst1[0].IN0
+B[1] => inst1[1].IN0
+B[2] => inst1[2].IN0
+B[3] => inst1[3].IN0
+B[4] => inst1[4].IN0
+B[5] => inst1[5].IN0
+B[6] => inst1[6].IN0
+B[7] => inst1[7].IN0
+B[8] => inst1[8].IN0
+B[9] => inst1[9].IN0
+B[10] => inst1[10].IN0
+B[11] => inst1[11].IN0
+S[0] <= Sum12bits:inst.S[0]
+S[1] <= Sum12bits:inst.S[1]
+S[2] <= Sum12bits:inst.S[2]
+S[3] <= Sum12bits:inst.S[3]
+S[4] <= Sum12bits:inst.S[4]
+S[5] <= Sum12bits:inst.S[5]
+S[6] <= Sum12bits:inst.S[6]
+S[7] <= Sum12bits:inst.S[7]
+S[8] <= Sum12bits:inst.S[8]
+S[9] <= Sum12bits:inst.S[9]
+S[10] <= Sum12bits:inst.S[10]
+S[11] <= Sum12bits:inst.S[11]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst
+Co <= Sum4bits:inst3.Co
+Ci => Sum4bits:inst.Ci
+A[0] => Sum4bits:inst.A[0]
+A[1] => Sum4bits:inst.A[1]
+A[2] => Sum4bits:inst.A[2]
+A[3] => Sum4bits:inst.A[3]
+A[4] => Sum4bits:inst2.A[0]
+A[5] => Sum4bits:inst2.A[1]
+A[6] => Sum4bits:inst2.A[2]
+A[7] => Sum4bits:inst2.A[3]
+A[8] => Sum4bits:inst3.A[0]
+A[9] => Sum4bits:inst3.A[1]
+A[10] => Sum4bits:inst3.A[2]
+A[11] => Sum4bits:inst3.A[3]
+B[0] => Sum4bits:inst.B[0]
+B[1] => Sum4bits:inst.B[1]
+B[2] => Sum4bits:inst.B[2]
+B[3] => Sum4bits:inst.B[3]
+B[4] => Sum4bits:inst2.B[0]
+B[5] => Sum4bits:inst2.B[1]
+B[6] => Sum4bits:inst2.B[2]
+B[7] => Sum4bits:inst2.B[3]
+B[8] => Sum4bits:inst3.B[0]
+B[9] => Sum4bits:inst3.B[1]
+B[10] => Sum4bits:inst3.B[2]
+B[11] => Sum4bits:inst3.B[3]
+S[0] <= Sum4bits:inst.s[0]
+S[1] <= Sum4bits:inst.s[1]
+S[2] <= Sum4bits:inst.s[2]
+S[3] <= Sum4bits:inst.s[3]
+S[4] <= Sum4bits:inst2.s[0]
+S[5] <= Sum4bits:inst2.s[1]
+S[6] <= Sum4bits:inst2.s[2]
+S[7] <= Sum4bits:inst2.s[3]
+S[8] <= Sum4bits:inst3.s[0]
+S[9] <= Sum4bits:inst3.s[1]
+S[10] <= Sum4bits:inst3.s[2]
+S[11] <= Sum4bits:inst3.s[3]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3
+Co <= Sumador1bit:inst4.Co
+A[0] => Sumador1bit:inst1.A
+A[1] => Sumador1bit:inst3.A
+A[2] => Sumador1bit:inst2.A
+A[3] => Sumador1bit:inst4.A
+B[0] => Sumador1bit:inst1.B
+B[1] => Sumador1bit:inst3.B
+B[2] => Sumador1bit:inst2.B
+B[3] => Sumador1bit:inst4.B
+Ci => Sumador1bit:inst1.Ci
+s[0] <= Sumador1bit:inst1.S
+s[1] <= Sumador1bit:inst3.S
+s[2] <= Sumador1bit:inst2.S
+s[3] <= Sumador1bit:inst4.S
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst4
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst4|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst2
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst2|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst3
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst3|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst1
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst3|Sumador1bit:inst1|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2
+Co <= Sumador1bit:inst4.Co
+A[0] => Sumador1bit:inst1.A
+A[1] => Sumador1bit:inst3.A
+A[2] => Sumador1bit:inst2.A
+A[3] => Sumador1bit:inst4.A
+B[0] => Sumador1bit:inst1.B
+B[1] => Sumador1bit:inst3.B
+B[2] => Sumador1bit:inst2.B
+B[3] => Sumador1bit:inst4.B
+Ci => Sumador1bit:inst1.Ci
+s[0] <= Sumador1bit:inst1.S
+s[1] <= Sumador1bit:inst3.S
+s[2] <= Sumador1bit:inst2.S
+s[3] <= Sumador1bit:inst4.S
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst4
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst4|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst2
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst2|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst3
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst3|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst1
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst2|Sumador1bit:inst1|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst
+Co <= Sumador1bit:inst4.Co
+A[0] => Sumador1bit:inst1.A
+A[1] => Sumador1bit:inst3.A
+A[2] => Sumador1bit:inst2.A
+A[3] => Sumador1bit:inst4.A
+B[0] => Sumador1bit:inst1.B
+B[1] => Sumador1bit:inst3.B
+B[2] => Sumador1bit:inst2.B
+B[3] => Sumador1bit:inst4.B
+Ci => Sumador1bit:inst1.Ci
+s[0] <= Sumador1bit:inst1.S
+s[1] <= Sumador1bit:inst3.S
+s[2] <= Sumador1bit:inst2.S
+s[3] <= Sumador1bit:inst4.S
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst4
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst4|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst2
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst2|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst3
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst3|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst1
+Co <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst.IN0
+A => XOR3:inst5.IN1
+Ci => inst1.IN1
+Ci => inst2.IN1
+Ci => XOR3:inst5.IN3
+B => inst2.IN0
+B => inst.IN1
+B => XOR3:inst5.IN2
+S <= XOR3:inst5.OUT
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Sum_Res:inst|Sum12bits:inst|Sum4bits:inst|Sumador1bit:inst1|XOR3:inst5
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5
+FIN <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+UPDOWN => inst8.IN0
+UPDOWN => inst5.IN0
+v_final[0] => comparador12bits:inst.v_final[0]
+v_final[1] => comparador12bits:inst.v_final[1]
+v_final[2] => comparador12bits:inst.v_final[2]
+v_final[3] => comparador12bits:inst.v_final[3]
+v_final[4] => comparador12bits:inst.v_final[4]
+v_final[5] => comparador12bits:inst.v_final[5]
+v_final[6] => comparador12bits:inst.v_final[6]
+v_final[7] => comparador12bits:inst.v_final[7]
+v_final[8] => comparador12bits:inst.v_final[8]
+v_final[9] => comparador12bits:inst.v_final[9]
+v_final[10] => comparador12bits:inst.v_final[10]
+v_final[11] => comparador12bits:inst.v_final[11]
+v_actual[0] => comparador12bits:inst.v_inicial[0]
+v_actual[1] => comparador12bits:inst.v_inicial[1]
+v_actual[2] => comparador12bits:inst.v_inicial[2]
+v_actual[3] => comparador12bits:inst.v_inicial[3]
+v_actual[4] => comparador12bits:inst.v_inicial[4]
+v_actual[5] => comparador12bits:inst.v_inicial[5]
+v_actual[6] => comparador12bits:inst.v_inicial[6]
+v_actual[7] => comparador12bits:inst.v_inicial[7]
+v_actual[8] => comparador12bits:inst.v_inicial[8]
+v_actual[9] => comparador12bits:inst.v_inicial[9]
+v_actual[10] => comparador12bits:inst.v_inicial[10]
+v_actual[11] => comparador12bits:inst.v_inicial[11]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst
+G <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+v_inicial[0] => comparador1bit:inst.A
+v_inicial[1] => comparador1bit:inst2.A
+v_inicial[2] => comparador1bit:inst3.A
+v_inicial[3] => comparador1bit:inst4.A
+v_inicial[4] => comparador1bit:inst5.A
+v_inicial[5] => comparador1bit:inst6.A
+v_inicial[6] => comparador1bit:inst7.A
+v_inicial[7] => comparador1bit:inst8.A
+v_inicial[8] => comparador1bit:inst9.A
+v_inicial[9] => comparador1bit:inst10.A
+v_inicial[10] => comparador1bit:inst11.A
+v_inicial[11] => comparador1bit:inst12.A
+v_final[0] => comparador1bit:inst.B
+v_final[1] => comparador1bit:inst2.B
+v_final[2] => comparador1bit:inst3.B
+v_final[3] => comparador1bit:inst4.B
+v_final[4] => comparador1bit:inst5.B
+v_final[5] => comparador1bit:inst6.B
+v_final[6] => comparador1bit:inst7.B
+v_final[7] => comparador1bit:inst8.B
+v_final[8] => comparador1bit:inst9.B
+v_final[9] => comparador1bit:inst10.B
+v_final[10] => comparador1bit:inst11.B
+v_final[11] => comparador1bit:inst12.B
+L <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+E <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst12
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst11
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst10
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst9
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst8
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst7
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst6
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst5
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst4
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst3
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst2
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|ComparadorFIN:inst5|comparador12bits:inst|comparador1bit:inst
+E <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+A => inst5.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst3.IN1
+G <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+L <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN|CONTADOR_UPDOWN:inst|BUSMUX:inst3
+dataa[0] => lpm_mux:$00000.data[0][0]
+dataa[1] => lpm_mux:$00000.data[0][1]
+dataa[2] => lpm_mux:$00000.data[0][2]
+dataa[3] => lpm_mux:$00000.data[0][3]
+dataa[4] => lpm_mux:$00000.data[0][4]
+dataa[5] => lpm_mux:$00000.data[0][5]
+dataa[6] => lpm_mux:$00000.data[0][6]
+dataa[7] => lpm_mux:$00000.data[0][7]
+dataa[8] => lpm_mux:$00000.data[0][8]
+dataa[9] => lpm_mux:$00000.data[0][9]
+dataa[10] => lpm_mux:$00000.data[0][10]
+dataa[11] => lpm_mux:$00000.data[0][11]
+datab[0] => lpm_mux:$00000.data[1][0]
+datab[1] => lpm_mux:$00000.data[1][1]
+datab[2] => lpm_mux:$00000.data[1][2]
+datab[3] => lpm_mux:$00000.data[1][3]
+datab[4] => lpm_mux:$00000.data[1][4]
+datab[5] => lpm_mux:$00000.data[1][5]
+datab[6] => lpm_mux:$00000.data[1][6]
+datab[7] => lpm_mux:$00000.data[1][7]
+datab[8] => lpm_mux:$00000.data[1][8]
+datab[9] => lpm_mux:$00000.data[1][9]
+datab[10] => lpm_mux:$00000.data[1][10]
+datab[11] => lpm_mux:$00000.data[1][11]
+sel => lpm_mux:$00000.sel[0]
+result[0] <= lpm_mux:$00000.result[0]
+result[1] <= lpm_mux:$00000.result[1]
+result[2] <= lpm_mux:$00000.result[2]
+result[3] <= lpm_mux:$00000.result[3]
+result[4] <= lpm_mux:$00000.result[4]
+result[5] <= lpm_mux:$00000.result[5]
+result[6] <= lpm_mux:$00000.result[6]
+result[7] <= lpm_mux:$00000.result[7]
+result[8] <= lpm_mux:$00000.result[8]
+result[9] <= lpm_mux:$00000.result[9]
+result[10] <= lpm_mux:$00000.result[10]
+result[11] <= lpm_mux:$00000.result[11]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|BUSMUX:inst3|lpm_mux:$00000
+data[0][0] => mux_j0d:auto_generated.data[0]
+data[0][1] => mux_j0d:auto_generated.data[1]
+data[0][2] => mux_j0d:auto_generated.data[2]
+data[0][3] => mux_j0d:auto_generated.data[3]
+data[0][4] => mux_j0d:auto_generated.data[4]
+data[0][5] => mux_j0d:auto_generated.data[5]
+data[0][6] => mux_j0d:auto_generated.data[6]
+data[0][7] => mux_j0d:auto_generated.data[7]
+data[0][8] => mux_j0d:auto_generated.data[8]
+data[0][9] => mux_j0d:auto_generated.data[9]
+data[0][10] => mux_j0d:auto_generated.data[10]
+data[0][11] => mux_j0d:auto_generated.data[11]
+data[1][0] => mux_j0d:auto_generated.data[12]
+data[1][1] => mux_j0d:auto_generated.data[13]
+data[1][2] => mux_j0d:auto_generated.data[14]
+data[1][3] => mux_j0d:auto_generated.data[15]
+data[1][4] => mux_j0d:auto_generated.data[16]
+data[1][5] => mux_j0d:auto_generated.data[17]
+data[1][6] => mux_j0d:auto_generated.data[18]
+data[1][7] => mux_j0d:auto_generated.data[19]
+data[1][8] => mux_j0d:auto_generated.data[20]
+data[1][9] => mux_j0d:auto_generated.data[21]
+data[1][10] => mux_j0d:auto_generated.data[22]
+data[1][11] => mux_j0d:auto_generated.data[23]
+sel[0] => mux_j0d:auto_generated.sel[0]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_j0d:auto_generated.result[0]
+result[1] <= mux_j0d:auto_generated.result[1]
+result[2] <= mux_j0d:auto_generated.result[2]
+result[3] <= mux_j0d:auto_generated.result[3]
+result[4] <= mux_j0d:auto_generated.result[4]
+result[5] <= mux_j0d:auto_generated.result[5]
+result[6] <= mux_j0d:auto_generated.result[6]
+result[7] <= mux_j0d:auto_generated.result[7]
+result[8] <= mux_j0d:auto_generated.result[8]
+result[9] <= mux_j0d:auto_generated.result[9]
+result[10] <= mux_j0d:auto_generated.result[10]
+result[11] <= mux_j0d:auto_generated.result[11]
+
+
+|MAIN|CONTADOR_UPDOWN:inst|BUSMUX:inst3|lpm_mux:$00000|mux_j0d:auto_generated
+data[0] => result_node[0].IN1
+data[1] => result_node[1].IN1
+data[2] => result_node[2].IN1
+data[3] => result_node[3].IN1
+data[4] => result_node[4].IN1
+data[5] => result_node[5].IN1
+data[6] => result_node[6].IN1
+data[7] => result_node[7].IN1
+data[8] => result_node[8].IN1
+data[9] => result_node[9].IN1
+data[10] => result_node[10].IN1
+data[11] => result_node[11].IN1
+data[12] => result_node[0].IN1
+data[13] => result_node[1].IN1
+data[14] => result_node[2].IN1
+data[15] => result_node[3].IN1
+data[16] => result_node[4].IN1
+data[17] => result_node[5].IN1
+data[18] => result_node[6].IN1
+data[19] => result_node[7].IN1
+data[20] => result_node[8].IN1
+data[21] => result_node[9].IN1
+data[22] => result_node[10].IN1
+data[23] => result_node[11].IN1
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result_node[3].DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result_node[4].DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result_node[5].DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= result_node[6].DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= result_node[7].DB_MAX_OUTPUT_PORT_TYPE
+result[8] <= result_node[8].DB_MAX_OUTPUT_PORT_TYPE
+result[9] <= result_node[9].DB_MAX_OUTPUT_PORT_TYPE
+result[10] <= result_node[10].DB_MAX_OUTPUT_PORT_TYPE
+result[11] <= result_node[11].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node[11].IN0
+sel[0] => _.IN0
+sel[0] => result_node[10].IN0
+sel[0] => _.IN0
+sel[0] => result_node[9].IN0
+sel[0] => _.IN0
+sel[0] => result_node[8].IN0
+sel[0] => _.IN0
+sel[0] => result_node[7].IN0
+sel[0] => _.IN0
+sel[0] => result_node[6].IN0
+sel[0] => _.IN0
+sel[0] => result_node[5].IN0
+sel[0] => _.IN0
+sel[0] => result_node[4].IN0
+sel[0] => _.IN0
+sel[0] => result_node[3].IN0
+sel[0] => _.IN0
+sel[0] => result_node[2].IN0
+sel[0] => _.IN0
+sel[0] => result_node[1].IN0
+sel[0] => _.IN0
+sel[0] => result_node[0].IN0
+sel[0] => _.IN0
+
+
+|MAIN|CONTADOR_UPDOWN:inst|Registro:VALOR_INICIAL
+BUF[0] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+BUF[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+BUF[2] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+BUF[3] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+BUF[4] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+BUF[5] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+BUF[6] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+BUF[7] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+BUF[8] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+BUF[9] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+BUF[10] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+BUF[11] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+DAT[0] => inst20.DATAIN
+DAT[1] => inst.DATAIN
+DAT[2] => inst5.DATAIN
+DAT[3] => inst6.DATAIN
+DAT[4] => inst7.DATAIN
+DAT[5] => inst8.DATAIN
+DAT[6] => inst9.DATAIN
+DAT[7] => inst10.DATAIN
+DAT[8] => inst11.DATAIN
+DAT[9] => inst12.DATAIN
+DAT[10] => inst13.DATAIN
+DAT[11] => inst19.DATAIN
+CLK => inst20.CLK
+CLK => inst.CLK
+CLK => inst5.CLK
+CLK => inst6.CLK
+CLK => inst7.CLK
+CLK => inst8.CLK
+CLK => inst9.CLK
+CLK => inst10.CLK
+CLK => inst11.CLK
+CLK => inst12.CLK
+CLK => inst13.CLK
+CLK => inst19.CLK
+EN => inst20.ENA
+EN => inst.ENA
+EN => inst5.ENA
+EN => inst6.ENA
+EN => inst7.ENA
+EN => inst8.ENA
+EN => inst9.ENA
+EN => inst10.ENA
+EN => inst11.ENA
+EN => inst12.ENA
+EN => inst13.ENA
+EN => inst19.ENA
+
+

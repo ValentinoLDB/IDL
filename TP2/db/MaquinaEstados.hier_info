@@ -1,0 +1,98 @@
+|MaquinaEstados
+Q2 <= FF2.DB_MAX_OUTPUT_PORT_TYPE
+clk => FF2.CLK
+clk => FF1.CLK
+clk => Contador35:inst18.clk
+clk => FF0.CLK
+Q1 <= FF1.DB_MAX_OUTPUT_PORT_TYPE
+Q0 <= FF0.DB_MAX_OUTPUT_PORT_TYPE
+S1V <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S1R <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+S1A <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+S2V <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+S2R <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+S2A <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+S3V <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+S3R <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+S3A <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6
+X <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+x5 => MenorIgual1bit:inst6.xi
+x4 => MenorIgual1bit:inst7.xi
+x3 => MenorIgual1bit:inst8.xi
+x2 => MenorIgual1bit:inst9.xi
+x1 => MenorIgual1bit:inst10.xi
+x0 => MenorIgual1bit:inst11.xi
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst6
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst7
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst8
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst9
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst10
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|MayorIgualA30:inst6|MenorIgual1bit:inst11
+Mi <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+xi => inst3.IN0
+xi => inst1.IN0
+bi => inst3.IN1
+bi => inst.IN1
+Pi <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEstados|Contador35:inst18
+Q0 <= FF0.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= FF1.DB_MAX_OUTPUT_PORT_TYPE
+clk => FF1.CLK
+clk => FF2.CLK
+clk => FF3.CLK
+clk => FF4.CLK
+clk => FF5.CLK
+clk => FF0.CLK
+Q5 <= FF5.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= FF2.DB_MAX_OUTPUT_PORT_TYPE
+Q4 <= FF4.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= FF3.DB_MAX_OUTPUT_PORT_TYPE
+
+
